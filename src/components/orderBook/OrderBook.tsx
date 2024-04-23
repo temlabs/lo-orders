@@ -3,7 +3,7 @@ import { OrderBookTable } from "./orderBookTable/OrderBookTable";
 
 export function OrderBook() {
   return (
-    <div className="gap-8 flex flex-col">
+    <div className="gap-8 flex flex-col w-fit">
       <SearchBar />
       <div className="flex flex-col gap-3">
         <div className="flex flex-row justify-between items-baseline">
