@@ -6,4 +6,5 @@ export interface OrderData {
   asks: [number, number][];
 }
 
-export type OrderBookData = Array<OrderData>;
+export type OrderDataMapKey = Pick<OrderData, "coin" | "exchange">;
+export type OrderDataMapValue = Omit<OrderData, "coin" | "exchange">;
