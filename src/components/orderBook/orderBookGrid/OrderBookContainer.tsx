@@ -18,8 +18,8 @@ export function OrderBookContainer({
   id,
 }: Props) {
   return (
-    <div className="w-fit">
-      <div className="flex flex-col gap-4">
+    <div className="w-64  min-h-72 h-fit">
+      <div className="flex flex-col gap-4 ">
         <div className="flex flex-row justify-end">
           <CloseIcon
             color="black"
@@ -27,17 +27,8 @@ export function OrderBookContainer({
             className="cursor-pointer"
           />
         </div>
-        <div>
-          {/* <button
-          onMouseUp={() => onAddNew("left", id)}
-          className="w-2 h-auto bg-neutral-0 hover:bg-blue-600 cursor-pointer transition-colors"
-        /> */}
-          {children}
-          {/* <button
-          onMouseUp={() => onAddNew("right", id)}
-          className="w-2 h-auto bg-neutral-0 hover:bg-blue-600 cursor-pointer transition-colors"
-        /> */}
-        </div>
+
+        {children}
       </div>
     </div>
   );

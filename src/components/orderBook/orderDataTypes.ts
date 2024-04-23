@@ -6,5 +6,11 @@ export interface OrderData {
   asks: [number, number][];
 }
 
-export type OrderDataMapKey = Pick<OrderData, "coin" | "exchange">;
+export type CoinExchangePair = Partial<Pick<OrderData, "coin" | "exchange">>;
 export type OrderDataMapValue = Omit<OrderData, "coin" | "exchange">;
+
+export type PriceArray = Array<{
+  price: number;
+  sellVolume?: number;
+  buyVolume?: number;
+}>;

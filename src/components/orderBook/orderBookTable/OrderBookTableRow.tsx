@@ -5,11 +5,17 @@ interface Props {
   price: string;
   buyVolume?: number;
   sellVolume?: number;
+  maxVolume: number;
 }
 
-export function OrderBookTableRow({ price, buyVolume, sellVolume }: Props) {
-  const sellProportion = 0.5;
-  const buyProportion = 0.5;
+export function OrderBookTableRow({
+  price,
+  buyVolume,
+  sellVolume,
+  maxVolume,
+}: Props) {
+  const sellProportion = !!sellVolume ? sellVolume / maxVolume : 0;
+  const buyProportion = !!buyVolume ? buyVolume / maxVolume : 0;
 
   return (
     <tr className="w-fit pt-2 pb-2 text-sm">
