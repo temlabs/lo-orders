@@ -1,8 +1,8 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Running the Project
 
-## Getting Started
+This project is deployed to Vercel [here](https://lo-orders.vercel.app/).
 
-First, run the development server:
+However, to run the development server, instructions are as follows:
 
 ```bash
 npm run dev
@@ -16,21 +16,30 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Get started by clicking the grey square to search for and select a pair. To add more panels, click to the right of a panel. To close a panel, click the x icon.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Technical Choices
 
-## Learn More
+I opted to approach this task in such a way that the result would yield an intuitive user experience, be mobile friendly and not be needlessly complicated. This approach largely informed my decisions.
 
-To learn more about Next.js, take a look at the following resources:
+### Next JS
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Next JS was chosen because I find it to be the quickest way to get a React app up and running. Despite not requiring landmark features such as file based navigation or server side rendering in this use case, Next JS yielded benefits in making font loading, deployment and extensibility of a project like this easy.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Tailwind CSS
 
-## Deploy on Vercel
+Tailwind was used for styling which allowed for faster progress to be made than would have otherwise been possible.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Assumptions
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+It was assumed that the selection of coin-exchange pairs would remain relatively consistent. A user must interact with a modal to select a pair, and the current implementation is such that only the pairs that have been received at the time of opening the modal show up.
+
+## Areas For Improvement
+
+There are a number of ways in which this project could be improved. I began exploring how the order volumes in particular could be updated outside of the React life cycle, directly manipulating the DOM. Zustand's transient updates looked promising, and with more time, I would certainly revisit this line of thinking.
+
+Additionally, I opted to use the standard WebSocket API, and moreover didn't pay much mind to robustness and proper error handling. It may be more expedient to use a library such as socket.io which abstracts some of the fiddliness that can often be associated with web sockets away.
+
+A better implementation of the modal would likewise be beneficial. Ideally, the list of coins and exchanges would be available at a REST endpoint so that they could be fetched and served immediately and unambiguously.
+
+Finally, a better search and select mechanism that allows a user to scrub with arrow keys would also be desireable.

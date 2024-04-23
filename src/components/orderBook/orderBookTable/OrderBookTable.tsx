@@ -21,16 +21,6 @@ export function OrderBookTable({ prices, maxVolume }: Props) {
             maxVolume={maxVolume}
           />
         ))}
-        {/* <OrderBookTableRow
-          price="101.43"
-          buyVolume={75}
-          sellVolume={undefined}
-        />
-        <OrderBookTableRow
-          price="101.43"
-          buyVolume={undefined}
-          sellVolume={38}
-        /> */}
       </tbody>
     </table>
   );
