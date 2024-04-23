@@ -1,15 +1,25 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { SearchIcon } from "../icons/SearchIcon";
 
 export function SearchBar() {
   const [searchTerm, setSearchTerm] = useState<string>();
+  const searchBarRef = useRef<HTMLInputElement>(null);
+
+  const scrollToInput = () => {
+    searchBarRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
 
   return (
     <div className="flex flex-row items-center">
       <SearchIcon color="black" className="-mr-7" />
       <input
+        ref={searchBarRef}
+        onFocus={scrollToInput}
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
         type={"text"}
