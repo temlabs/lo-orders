@@ -13,9 +13,9 @@ export function OrderBookTableRow({price, buyVolume, sellVolume}:Props){
 
     return (
         <tr className="w-fit ">
-        <td><OrderBookTableVolumeCell direction="left" value={buyVolume?.toString()} color='bg-green-600' proportion={buyProportion}/></td>
-        <td className="text-center">{price}</td>
-        <td ><OrderBookTableVolumeCell direction="right" value={sellVolume?.toString()} color='bg-red-400' proportion={sellProportion}/></td>
+        <td className="border-neutral-200 border-solid border"><OrderBookTableVolumeCell direction="left" value={buyVolume?.toString()} color='bg-green-200' proportion={buyProportion}/></td>
+        <td className="text-center border-neutral-200 border-solid border">{price}</td>
+        <td className="border-neutral-200 border-solid border"><OrderBookTableVolumeCell direction="right" value={sellVolume?.toString()} color='bg-red-200' proportion={sellProportion}/></td>
       </tr>
     )
 }
