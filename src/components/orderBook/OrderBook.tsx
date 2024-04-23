@@ -37,7 +37,7 @@ export function OrderBook({ coinExchangePair, onOpenModal, data }: Props) {
     ...priceArray.map((p) => Math.max(p.buyVolume ?? 0, p.sellVolume ?? 0))
   );
   return (
-    <div className="gap-8 flex flex-col w-fit">
+    <div className="gap-8 flex flex-col w-full">
       <SearchBar onFocus={() => onOpenModal()} />
       <div className="flex flex-col gap-3">
         <div className="flex flex-row justify-between items-baseline">
