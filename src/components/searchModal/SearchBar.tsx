@@ -15,8 +15,8 @@ export function SearchBar() {
   };
 
   return (
-    <div className="flex flex-row items-center">
-      <SearchIcon color="black" className="-mr-7" />
+    <div className="flex flex-row items-center w-fit overflow-hidden relative">
+      <SearchIcon color="black" className="absolute left-2" />
       <input
         ref={searchBarRef}
         onFocus={scrollToInput}
